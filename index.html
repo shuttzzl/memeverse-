@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#191421">
+  <meta name="description" content="The MEMEVERSE: actual internet memes, brainrot translation, aura checks and an extremely suspicious free-reward button.">
+  <meta property="og:title" content="MEMEVERSE — welcome to the chaos">
+  <meta property="og:description" content="A terrible use of the internet. In a good way.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="background.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+  <title>MEMEVERSE — the internet needs supervision</title>
+</head>
+<body>
+  <a class="skip" href="#memes">Skip to memes</a>
+  <div class="background" aria-hidden="true"></div>
+
+  <header class="site-header container" id="top">
+    <a class="wordmark" href="#top" aria-label="Memeverse home">MEMEVERSE<span class="star">✦</span></a>
+    <nav aria-label="Main navigation" class="nav">
+      <a href="#memes">the feed</a>
+      <a href="#translator">brainrot translator</a>
+      <a href="#aura">aura check</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow">✦ 100% UNHINGED · 0% PRODUCTIVE ✦</div>
+        <h1 id="hero-title">WELCOME<br>TO THE<br><span>CHAOS.</span></h1>
+        <div class="hero-actions">
+          <a class="button button-lime" href="#memes">ENTER THE BRAINROT <span aria-hidden="true">↓</span></a>
+          <button class="button button-pink" type="button" id="heroTrap">DO NOT CLICK 👀</button>
+        </div>
+      </div>
+      <div class="sticker" aria-label="Certified silly, unicorn approved">
+        <span aria-hidden="true" class="sticker-emoji">🦄</span>
+        <strong>certified silly</strong>
+        <span class="mono small">unicorn approved ✓</span>
+      </div>
+      <span class="hero-micro mono" aria-hidden="true">[ the lore is that there is no lore ]</span>
+    </section>
+
+    <div class="ticker" aria-label="Memeverse status messages">
+      <div class="container ticker-content"><span>NO THOUGHTS, JUST TABS OPEN</span><span aria-hidden="true">✳</span><span>THE SCROLL IS SCROLLING</span><span aria-hidden="true">✳</span><span>WE ARE NOT BEATING THE ALLEGATIONS</span><span aria-hidden="true">✳</span><span>ANOTHER DAY, ANOTHER SIDE QUEST</span></div>
+    </div>
+
+    <section class="section feed-section" id="memes" aria-labelledby="feed-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="kicker">01 / YOUR ALGORITHM IS COOKED</p>
+            <h2 id="feed-title">THE SCROLL<br>OF SHAME<span class="period">.</span></h2>
+          </div>
+          <p class="head-note mono">real meme templates.<br>terminally online captions.</p>
+        </div>
+        <div class="feed-toolbar">
+          <div class="filters" role="group" aria-label="Filter memes">
+            <button type="button" class="chip active" data-filter="all" aria-pressed="true">everything</button>
+            <button type="button" class="chip" data-filter="school" aria-pressed="false">school arc</button>
+            <button type="button" class="chip" data-filter="anime" aria-pressed="false">anime brain</button>
+            <button type="button" class="chip" data-filter="brainrot" aria-pressed="false">brainrot</button>
+          </div>
+          <button class="shuffle" id="shuffle" type="button">SHUFFLE THE FEED ↻</button>
+        </div>
+        <div class="feed-grid" id="feedGrid" aria-live="polite"></div>
+        <p class="feed-footnote mono" id="feedStatus">loading the deeply important content…</p>
+      </div>
+    </section>
+
+    <section class="section tool-section" id="translator" aria-labelledby="translator-title">
+      <div class="container">
+        <div class="section-head compact-head">
+          <div>
+            <p class="kicker">02 / CHAT IS THIS REAL</p>
+            <h2 id="translator-title">BRAINROT<br>TRANSLATOR<span class="period">.</span></h2>
+          </div>
+        </div>
+        <div class="translator-grid">
+          <form class="translator-form" id="translateForm">
+            <label for="normalText" class="form-label mono">TYPE A NORMAL SENTENCE (CRINGE)</label>
+            <textarea id="normalText" name="normalText" rows="4" maxlength="220" placeholder="I forgot to do my homework" required></textarea>
+            <div class="form-actions">
+              <button class="button button-lime" type="submit">MAKE IT WORSE →</button>
+              <button class="text-button" id="exampleBtn" type="button">give me an example</button>
+            </div>
+          </form>
+          <div class="translator-output" id="translatorOutput" aria-live="polite">
+            <div class="output-top mono"><span>TRANSLATED // ENGLISH → BRAINROT</span><span id="outputStatus">READY</span></div>
+            <p id="translatedText" class="translated-text">your sentence will be cooked here.</p>
+            <button type="button" class="copy-button" id="copyTranslation">COPY THIS MASTERPIECE ↗</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section aura-section" id="aura" aria-labelledby="aura-title">
+      <div class="container">
+        <div class="section-head compact-head">
+          <div>
+            <p class="kicker">03 / THE VIBE INSPECTOR</p>
+            <h2 id="aura-title">AURA<br>INSPECTION<span class="period">.</span></h2>
+          </div>
+          <p class="head-note mono">a completely made-up science.<br>results unfortunately accurate.</p>
+        </div>
+        <div class="aura-panel">
+          <div class="aura-questions">
+            <p class="form-label mono">WHAT ARE YOU DOING AT 2:47 AM?</p>
+            <div class="aura-options" role="group" aria-label="Choose your 2:47 AM activity">
+              <button type="button" class="aura-option" data-aura="sleep">sleeping like a functioning citizen</button>
+              <button type="button" class="aura-option" data-aura="anime">one more episode (a lie)</button>
+              <button type="button" class="aura-option" data-aura="scroll">scrolling reels with no sound</button>
+              <button type="button" class="aura-option" data-aura="fridge">opening the fridge for the 6th time</button>
+            </div>
+          </div>
+          <div class="aura-result" aria-live="polite">
+            <span class="mono">OFFICIAL AURA RATING</span>
+            <strong id="auraNumber">???</strong>
+            <p id="auraVerdict">select your side quest to receive judgement.</p>
+            <span class="aura-stamp mono" id="auraStamp">UNASSESSED NPC</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cursed-section" id="secret" aria-labelledby="secret-title">
+      <div class="container">
+        <div class="cursed-card">
+          <div class="cursed-copy">
+            <p class="kicker">04 / YOU DID NOT SEE THIS</p>
+            <h2 id="secret-title">FREE<br>+9999 AURA<span class="period">?</span></h2>
+            <p class="cursed-desc">no survey. no scam. no suspicious 1980s pop music.</p>
+          </div>
+          <button class="button button-pink secret-button" id="rewardTrap" type="button">CLAIM THE REWARD ↗</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><strong>MEMEVERSE.</strong><span class="mono"> professionally unserious since 2026.</span></div>
+      <div class="footer-links"><a href="#top">back to top ↑</a><a href="https://memegen.link/" target="_blank" rel="noreferrer noopener">meme template credits ↗</a></div>
+      <p class="footer-note mono">Meme images supplied by Memegen.link. Internet needed to load the images. Original template credits belong to their creators.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal" id="rickModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+      <div class="modal-head"><span class="mono">SURPRISE DELIVERY</span><button type="button" class="modal-close" id="closeModal" aria-label="Close Rickroll">CLOSE ✕</button></div>
+      <h2 id="modalTitle">NEVER GONNA GIVE YOU UP.</h2>
+      <p>YOU HAVE BEEN RICKROLLED. THE 9999 AURA WAS NEVER REAL.</p>
+      <div class="video-shell" id="videoShell"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">WATCH THE LEGENDARY VIDEO ↗</a></div>
+      <a class="video-direct" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">Video blocked? Open on YouTube ↗</a>
+    </div>
+  </div>
+</body>
+</html>
